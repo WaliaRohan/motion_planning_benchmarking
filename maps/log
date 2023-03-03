@@ -1,0 +1,265 @@
+[INFO] [launch]: All log files can be found below /home/speedracer1702/.ros/log/2023-03-02-12-10-03-165461-workstation-108697
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [component_container_isolated-1]: process started with pid [108786]
+[component_container_isolated-1] [INFO] [1677777006.947400576] [nav2_container]: Load Library: /opt/ros/humble/lib/libmap_server_core.so
+[component_container_isolated-1] [INFO] [1677777006.960910007] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapSaver>
+[component_container_isolated-1] [INFO] [1677777006.961673076] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[component_container_isolated-1] [INFO] [1677777006.962070208] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[component_container_isolated-1] [INFO] [1677777009.014700991] [map_server]: 
+[component_container_isolated-1] 	map_server lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1677777009.014784494] [map_server]: Creating
+[component_container_isolated-1] [INFO] [1677777009.015175648] [nav2_container]: Load Library: /opt/ros/humble/lib/libcontroller_server_core.so
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/map_server' in container 'nav2_container'
+[component_container_isolated-1] [INFO] [1677777009.019226193] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[component_container_isolated-1] [INFO] [1677777009.019309990] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[component_container_isolated-1] [INFO] [1677777015.148706633] [controller_server]: 
+[component_container_isolated-1] 	controller_server lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1677777015.154929711] [controller_server]: Creating controller server
+[component_container_isolated-1] [INFO] [1677777018.224939794] [local_costmap.local_costmap]: 
+[component_container_isolated-1] 	local_costmap lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1677777018.226786924] [local_costmap.local_costmap]: Creating Costmap
+[component_container_isolated-1] [INFO] [1677777018.230916953] [nav2_container]: Load Library: /opt/ros/humble/lib/libamcl_core.so
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/controller_server' in container 'nav2_container'
+[component_container_isolated-1] [INFO] [1677777018.235543396] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[component_container_isolated-1] [INFO] [1677777018.235580999] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[component_container_isolated-1] [INFO] [1677777021.310191869] [amcl]: 
+[component_container_isolated-1] 	amcl lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1677777021.310696120] [amcl]: Creating
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/amcl' in container 'nav2_container'
+[component_container_isolated-1] [INFO] [1677777021.321613448] [nav2_container]: Load Library: /opt/ros/humble/lib/libsmoother_server_core.so
+[component_container_isolated-1] [INFO] [1677777021.323548333] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[component_container_isolated-1] [INFO] [1677777021.323606738] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[component_container_isolated-1] [INFO] [1677777024.381126837] [smoother_server]: 
+[component_container_isolated-1] 	smoother_server lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1677777024.383231549] [smoother_server]: Creating smoother server
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/smoother_server' in container 'nav2_container'
+[component_container_isolated-1] [INFO] [1677777024.384961217] [nav2_container]: Load Library: /opt/ros/humble/lib/libnav2_lifecycle_manager_core.so
+[component_container_isolated-1] [INFO] [1677777024.386079288] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[component_container_isolated-1] [INFO] [1677777024.386133528] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[component_container_isolated-1] [INFO] [1677777030.503529419] [lifecycle_manager_localization]: Creating
+[component_container_isolated-1] [INFO] [1677777030.512419187] [lifecycle_manager_localization]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[component_container_isolated-1] [INFO] [1677777030.512535307] [nav2_container]: Load Library: /opt/ros/humble/lib/libplanner_server_core.so
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/lifecycle_manager_localization' in container 'nav2_container'
+[component_container_isolated-1] [INFO] [1677777030.514714552] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_planner::PlannerServer>
+[component_container_isolated-1] [INFO] [1677777030.514755195] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_planner::PlannerServer>
+[component_container_isolated-1] [INFO] [1677777030.518321557] [lifecycle_manager_localization]: [34m[1mStarting managed nodes bringup...[0m[0m
+[component_container_isolated-1] [INFO] [1677777030.519066838] [lifecycle_manager_localization]: [34m[1mConfiguring map_server[0m[0m
+[component_container_isolated-1] [INFO] [1677777030.519268268] [map_server]: Configuring
+[component_container_isolated-1] [INFO] [map_io]: Loading yaml file: turtlebot3_world.yaml
+[component_container_isolated-1] [DEBUG] [map_io]: resolution: 0.05
+[component_container_isolated-1] [DEBUG] [map_io]: origin[0]: -3.81
+[component_container_isolated-1] [DEBUG] [map_io]: origin[1]: -1.83
+[component_container_isolated-1] [DEBUG] [map_io]: origin[2]: 0
+[component_container_isolated-1] [DEBUG] [map_io]: free_thresh: 0.25
+[component_container_isolated-1] [DEBUG] [map_io]: occupied_thresh: 0.65
+[component_container_isolated-1] [DEBUG] [map_io]: mode: trinary
+[component_container_isolated-1] [DEBUG] [map_io]: negate: 0
+[component_container_isolated-1] [INFO] [map_io]: Loading image_file: ./turtlebot3_world.pgm
+[component_container_isolated-1] [DEBUG] [map_io]: Read map ./turtlebot3_world.pgm: 136 X 140 map @ 0.05 m/cell
+[component_container_isolated-1] [INFO] [1677777033.583574100] [lifecycle_manager_localization]: [34m[1mConfiguring amcl[0m[0m
+[component_container_isolated-1] [INFO] [1677777033.584826349] [amcl]: Configuring
+[component_container_isolated-1] [INFO] [1677777033.584964513] [amcl]: initTransforms
+[component_container_isolated-1] [INFO] [1677777036.656023116] [amcl]: initPubSub
+[component_container_isolated-1] [INFO] [1677777036.666898220] [amcl]: Subscribed to map topic.
+[component_container_isolated-1] [INFO] [1677777039.728739541] [lifecycle_manager_localization]: [34m[1mActivating map_server[0m[0m
+[component_container_isolated-1] [INFO] [1677777039.729719724] [map_server]: Activating
+[component_container_isolated-1] [INFO] [1677777039.729841127] [map_server]: Creating bond (map_server) to lifecycle manager.
+[component_container_isolated-1] [INFO] [1677777039.730986513] [amcl]: Received a 136 X 140 map @ 0.050 m/pix
+[component_container_isolated-1] [INFO] [1677777042.798784467] [planner_server]: 
+[component_container_isolated-1] 	planner_server lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1677777042.800523926] [planner_server]: Creating
+[component_container_isolated-1] [INFO] [1677777042.900782381] [lifecycle_manager_localization]: Server map_server connected with bond.
+[component_container_isolated-1] [INFO] [1677777042.901780221] [lifecycle_manager_localization]: [34m[1mActivating amcl[0m[0m
+[component_container_isolated-1] [INFO] [1677777042.902670313] [amcl]: Activating
+[component_container_isolated-1] [INFO] [1677777042.903322966] [amcl]: Creating bond (amcl) to lifecycle manager.
+[component_container_isolated-1] [INFO] [1677777045.864619971] [amcl]: createLaserObject
+[component_container_isolated-1] [WARN] [1677777045.882707965] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777046.002450958] [lifecycle_manager_localization]: Server amcl connected with bond.
+[component_container_isolated-1] [INFO] [1677777046.002530388] [lifecycle_manager_localization]: [34m[1mManaged nodes are active[0m[0m
+[component_container_isolated-1] [INFO] [1677777046.002564072] [lifecycle_manager_localization]: [34m[1mCreating bond timer...[0m[0m
+[component_container_isolated-1] [INFO] [1677777048.945320194] [global_costmap.global_costmap]: 
+[component_container_isolated-1] 	global_costmap lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1677777048.947202764] [global_costmap.global_costmap]: Creating Costmap
+[component_container_isolated-1] [WARN] [1677777048.950446426] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/planner_server' in container 'nav2_container'
+[component_container_isolated-1] [INFO] [1677777048.964620838] [nav2_container]: Load Library: /opt/ros/humble/lib/libbehavior_server_core.so
+[component_container_isolated-1] [INFO] [1677777048.968864457] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<behavior_server::BehaviorServer>
+[component_container_isolated-1] [INFO] [1677777048.968933835] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<behavior_server::BehaviorServer>
+[component_container_isolated-1] [WARN] [1677777052.011603556] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [WARN] [1677777055.081057861] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777058.152536147] [behavior_server]: 
+[component_container_isolated-1] 	behavior_server lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/behavior_server' in container 'nav2_container'
+[component_container_isolated-1] [WARN] [1677777058.160340248] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777058.169348934] [nav2_container]: Load Library: /opt/ros/humble/lib/libbt_navigator_core.so
+[component_container_isolated-1] [INFO] [1677777058.171739055] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_bt_navigator::BtNavigator>
+[component_container_isolated-1] [INFO] [1677777058.172631636] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_bt_navigator::BtNavigator>
+[component_container_isolated-1] [WARN] [1677777061.225932028] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [WARN] [1677777064.301027688] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777064.307759741] [bt_navigator]: 
+[component_container_isolated-1] 	bt_navigator lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1677777064.307866972] [bt_navigator]: Creating
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/bt_navigator' in container 'nav2_container'
+[component_container_isolated-1] [INFO] [1677777064.312601300] [nav2_container]: Load Library: /opt/ros/humble/lib/libwaypoint_follower_core.so
+[component_container_isolated-1] [INFO] [1677777064.314073610] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_waypoint_follower::WaypointFollower>
+[component_container_isolated-1] [INFO] [1677777064.314690604] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_waypoint_follower::WaypointFollower>
+[component_container_isolated-1] [WARN] [1677777067.371994149] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [WARN] [1677777070.447145906] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777070.450717966] [waypoint_follower]: 
+[component_container_isolated-1] 	waypoint_follower lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-1] [INFO] [1677777070.451853928] [waypoint_follower]: Creating
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/waypoint_follower' in container 'nav2_container'
+[component_container_isolated-1] [INFO] [1677777070.467290692] [nav2_container]: Load Library: /opt/ros/humble/lib/libvelocity_smoother_core.so
+[component_container_isolated-1] [INFO] [1677777070.469417020] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_velocity_smoother::VelocitySmoother>
+[component_container_isolated-1] [INFO] [1677777070.469506400] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_velocity_smoother::VelocitySmoother>
+[component_container_isolated-1] [INFO] [1677777071.467248993] [amcl]: Message Filter dropping message: frame 'base_scan' at time 26.164 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [WARN] [1677777073.521273748] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [WARN] [1677777076.588287156] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [WARN] [1677777078.829341518] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [WARN] [1677777082.729955885] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [WARN] [1677777085.800661586] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [WARN] [1677777088.872990475] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777088.876623368] [velocity_smoother]: 
+[component_container_isolated-1] 	velocity_smoother lifecycle node launched. 
+[component_container_isolated-1] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/velocity_smoother' in container 'nav2_container'
+[component_container_isolated-1] [INFO] [1677777088.906323795] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[component_container_isolated-1] [INFO] [1677777088.906379435] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[component_container_isolated-1] [WARN] [1677777091.960701941] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777095.017715850] [lifecycle_manager_navigation]: Creating
+[component_container_isolated-1] [WARN] [1677777095.021694930] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/lifecycle_manager_navigation' in container 'nav2_container'
+[component_container_isolated-1] [INFO] [1677777095.049475835] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[component_container_isolated-1] [INFO] [1677777096.040876662] [amcl]: Message Filter dropping message: frame 'base_scan' at time 37.972 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [WARN] [1677777098.089719217] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [WARN] [1677777101.161608166] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777104.230796733] [lifecycle_manager_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
+[component_container_isolated-1] [INFO] [1677777104.230866992] [lifecycle_manager_navigation]: [34m[1mConfiguring controller_server[0m[0m
+[component_container_isolated-1] [INFO] [1677777104.231565551] [controller_server]: Configuring controller interface
+[component_container_isolated-1] [INFO] [1677777104.231893904] [controller_server]: getting goal checker plugins..
+[component_container_isolated-1] [INFO] [1677777104.231992060] [controller_server]: Controller frequency set to 20.0000Hz
+[component_container_isolated-1] [INFO] [1677777104.232028096] [local_costmap.local_costmap]: Configuring
+[component_container_isolated-1] [WARN] [1677777104.234384670] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777104.247049621] [local_costmap.local_costmap]: Using plugin "voxel_layer"
+[component_container_isolated-1] [INFO] [1677777104.264756698] [local_costmap.local_costmap]: Subscribed to Topics: scan
+[component_container_isolated-1] [WARN] [1677777106.575325310] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777107.319080844] [local_costmap.local_costmap]: Initialized plugin "voxel_layer"
+[component_container_isolated-1] [INFO] [1677777107.319418066] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[component_container_isolated-1] [INFO] [1677777107.326693696] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[component_container_isolated-1] [WARN] [1677777110.377052066] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [WARN] [1677777113.452646420] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777113.456730281] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[component_container_isolated-1] [INFO] [1677777113.460711938] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[component_container_isolated-1] [INFO] [1677777113.462867408] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[component_container_isolated-1] [INFO] [1677777113.467001428] [controller_server]: Created controller : FollowPath of type dwb_core::DWBLocalPlanner
+[component_container_isolated-1] [INFO] [1677777113.473408458] [controller_server]: Setting transform_tolerance to 0.200000
+[component_container_isolated-1] [WARN] [1677777116.520808810] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777116.556827033] [controller_server]: Using critic "RotateToGoal" (dwb_critics::RotateToGoalCritic)
+[component_container_isolated-1] [INFO] [1677777116.562646642] [controller_server]: Critic plugin initialized
+[component_container_isolated-1] [INFO] [1677777116.563658809] [controller_server]: Using critic "Oscillation" (dwb_critics::OscillationCritic)
+[component_container_isolated-1] [INFO] [1677777116.567761120] [controller_server]: Critic plugin initialized
+[component_container_isolated-1] [INFO] [1677777116.568665995] [controller_server]: Using critic "BaseObstacle" (dwb_critics::BaseObstacleCritic)
+[component_container_isolated-1] [INFO] [1677777116.570623272] [controller_server]: Critic plugin initialized
+[component_container_isolated-1] [INFO] [1677777116.571666172] [controller_server]: Using critic "GoalAlign" (dwb_critics::GoalAlignCritic)
+[component_container_isolated-1] [INFO] [1677777116.574832352] [controller_server]: Critic plugin initialized
+[component_container_isolated-1] [INFO] [1677777116.576211208] [controller_server]: Using critic "PathAlign" (dwb_critics::PathAlignCritic)
+[component_container_isolated-1] [INFO] [1677777116.579949196] [controller_server]: Critic plugin initialized
+[component_container_isolated-1] [INFO] [1677777116.581182946] [controller_server]: Using critic "PathDist" (dwb_critics::PathDistCritic)
+[component_container_isolated-1] [INFO] [1677777116.583453048] [controller_server]: Critic plugin initialized
+[component_container_isolated-1] [INFO] [1677777116.584689088] [controller_server]: Using critic "GoalDist" (dwb_critics::GoalDistCritic)
+[component_container_isolated-1] [INFO] [1677777116.586913943] [controller_server]: Critic plugin initialized
+[component_container_isolated-1] [INFO] [1677777116.586981839] [controller_server]: Controller Server has FollowPath  controllers available.
+[component_container_isolated-1] [WARN] [1677777119.592451174] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777119.614569644] [lifecycle_manager_navigation]: [34m[1mConfiguring smoother_server[0m[0m
+[component_container_isolated-1] [INFO] [1677777119.614816046] [smoother_server]: Configuring smoother server
+[component_container_isolated-1] [WARN] [1677777121.666350797] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [WARN] [1677777124.960376382] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777125.737185773] [smoother_server]: Created smoother : simple_smoother of type nav2_smoother::SimpleSmoother
+[component_container_isolated-1] [INFO] [1677777125.739864369] [smoother_server]: Smoother Server has simple_smoother  smoothers available.
+[component_container_isolated-1] [WARN] [1677777128.809815635] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777128.831131995] [lifecycle_manager_navigation]: [34m[1mConfiguring planner_server[0m[0m
+[component_container_isolated-1] [INFO] [1677777128.833837362] [planner_server]: Configuring
+[component_container_isolated-1] [INFO] [1677777128.833936759] [global_costmap.global_costmap]: Configuring
+[component_container_isolated-1] [WARN] [1677777131.886620381] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777131.888954256] [global_costmap.global_costmap]: Using plugin "static_layer"
+[component_container_isolated-1] [INFO] [1677777131.894219558] [global_costmap.global_costmap]: Subscribing to the map topic (/map) with transient local durability
+[component_container_isolated-1] [INFO] [1677777131.913822492] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[component_container_isolated-1] [INFO] [1677777131.914704846] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[component_container_isolated-1] [INFO] [1677777131.914263723] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 136 X 140 at 0.050000 m/pix
+[component_container_isolated-1] [INFO] [1677777131.920604545] [global_costmap.global_costmap]: Subscribed to Topics: scan
+[component_container_isolated-1] [WARN] [1677777134.955867386] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777134.959718095] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[component_container_isolated-1] [INFO] [1677777134.960270771] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[component_container_isolated-1] [INFO] [1677777134.962878898] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[component_container_isolated-1] [WARN] [1677777138.029648909] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777138.048035253] [planner_server]: Created global planner plugin GridBased of type nav2_navfn_planner/NavfnPlanner
+[component_container_isolated-1] [INFO] [1677777138.048721803] [planner_server]: Configuring plugin GridBased of type NavfnPlanner
+[component_container_isolated-1] [INFO] [1677777138.052222588] [planner_server]: Planner Server has GridBased  planners available.
+[component_container_isolated-1] [WARN] [1677777140.223601321] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [WARN] [1677777144.173233189] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777145.210958279] [amcl]: Message Filter dropping message: frame 'base_scan' at time 61.996 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777147.239380152] [lifecycle_manager_navigation]: [34m[1mConfiguring behavior_server[0m[0m
+[component_container_isolated-1] [INFO] [1677777147.239538195] [behavior_server]: Configuring
+[component_container_isolated-1] [INFO] [1677777150.317863294] [behavior_server]: Creating behavior plugin spin of type nav2_behaviors/Spin
+[component_container_isolated-1] [INFO] [1677777150.320257359] [behavior_server]: Configuring spin
+[component_container_isolated-1] [WARN] [1677777150.330052953] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777153.392590842] [behavior_server]: Creating behavior plugin backup of type nav2_behaviors/BackUp
+[component_container_isolated-1] [INFO] [1677777153.394039249] [behavior_server]: Configuring backup
+[component_container_isolated-1] [WARN] [1677777153.405812674] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777159.530453662] [behavior_server]: Creating behavior plugin drive_on_heading of type nav2_behaviors/DriveOnHeading
+[component_container_isolated-1] [INFO] [1677777159.532245745] [behavior_server]: Configuring drive_on_heading
+[component_container_isolated-1] [WARN] [1677777159.533163489] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777162.603457541] [behavior_server]: Creating behavior plugin assisted_teleop of type nav2_behaviors/AssistedTeleop
+[component_container_isolated-1] [INFO] [1677777162.605500734] [behavior_server]: Configuring assisted_teleop
+[component_container_isolated-1] [WARN] [1677777165.676647985] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
+[component_container_isolated-1] [INFO] [1677777168.745671667] [behavior_server]: Creating behavior plugin wait of type nav2_behaviors/Wait
+[component_container_isolated-1] [INFO] [1677777168.746580028] [behavior_server]: Configuring wait
+[component_container_isolated-1] [INFO] [1677777171.827268117] [lifecycle_manager_navigation]: [34m[1mConfiguring bt_navigator[0m[0m
+[component_container_isolated-1] [INFO] [1677777171.828075223] [bt_navigator]: Configuring
+[component_container_isolated-1] [INFO] [1677777172.820024395] [amcl]: Message Filter dropping message: frame 'base_scan' at time 69.413 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777172.820627462] [amcl]: Message Filter dropping message: frame 'base_scan' at time 69.614 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777172.821471258] [amcl]: Message Filter dropping message: frame 'base_scan' at time 69.814 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777172.822118831] [amcl]: Message Filter dropping message: frame 'base_scan' at time 70.013 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777172.822713290] [amcl]: Message Filter dropping message: frame 'base_scan' at time 70.213 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777172.823284469] [amcl]: Message Filter dropping message: frame 'base_scan' at time 70.414 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777172.828210687] [amcl]: Message Filter dropping message: frame 'base_scan' at time 70.613 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777175.890431438] [amcl]: Message Filter dropping message: frame 'base_scan' at time 72.216 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777175.895591564] [amcl]: Message Filter dropping message: frame 'base_scan' at time 72.414 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777175.895711467] [amcl]: Message Filter dropping message: frame 'base_scan' at time 72.613 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777175.901097719] [amcl]: Message Filter dropping message: frame 'base_scan' at time 72.813 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777175.903198798] [amcl]: Message Filter dropping message: frame 'base_scan' at time 73.013 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777175.904700378] [amcl]: Message Filter dropping message: frame 'base_scan' at time 73.213 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777175.909660567] [amcl]: Message Filter dropping message: frame 'base_scan' at time 73.413 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777178.976040611] [amcl]: Message Filter dropping message: frame 'base_scan' at time 75.014 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777178.976448223] [amcl]: Message Filter dropping message: frame 'base_scan' at time 75.213 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777178.977102068] [amcl]: Message Filter dropping message: frame 'base_scan' at time 75.414 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777178.983080122] [amcl]: Message Filter dropping message: frame 'base_scan' at time 75.613 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777178.983591598] [amcl]: Message Filter dropping message: frame 'base_scan' at time 75.813 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777178.985922957] [amcl]: Message Filter dropping message: frame 'base_scan' at time 76.013 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777178.986557759] [amcl]: Message Filter dropping message: frame 'base_scan' at time 76.213 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777185.114209697] [amcl]: Message Filter dropping message: frame 'base_scan' at time 76.613 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777185.117744679] [amcl]: Message Filter dropping message: frame 'base_scan' at time 76.813 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777185.117849640] [amcl]: Message Filter dropping message: frame 'base_scan' at time 77.013 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [INFO] [1677777185.123233652] [amcl]: Message Filter dropping message: frame 'base_scan' at time 77.213 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[component_container_isolated-1] [WARN] [1677777187.219572229] [amcl]: AMCL cannot publish a pose or update the transform. Please set the initial pose...
