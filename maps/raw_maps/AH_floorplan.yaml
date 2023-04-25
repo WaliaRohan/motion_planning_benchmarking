@@ -1,0 +1,6 @@
+image: AH_floorplan.pgm
+resolution: 0.370647496 # xLims: [0 132.50], yLims: [0 53], imageSize: [355 x 144], resolution = (xLim/imageSize(1) + yLim/imageSize(2))/2
+origin: [0.0, 0.0, 0.000000]
+negate: 0
+occupied_thresh: 0.01 # 0.4
+free_thresh: 0.99 # 0.196

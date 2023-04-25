@@ -1,0 +1,6 @@
+image: MATLAB_clutter_small.pgm
+resolution: 0.2 # xLims: [0 50], yLims: [0 50], imageSize: [250 x 250], resolution = (xLim/imageSize(1) + yLim/imageSize(2))/2
+origin: [0, 0, 0]
+negate: 0
+occupied_thresh: 0.99
+free_thresh: 0.01
