@@ -117,9 +117,9 @@ def main():
     # Set map to use, other options: 100by100_15, 100by100_10
     # map_path = os.getcwd() + '/' + glob.glob('**/100by100_20.yaml', recursive=True)[0]
     # map_path = '/home/speedracer1702/Projects/navigation2/tools/planner_benchmarking/' + 'turtlebot3_world.yaml'
-    base_path = '/home/speedracer1702/Projects/ros2_ws/src/nav2_benchmark/maps/'
+    base_path = '/home/speedracer1702/Projects/ros2_ws/src/nav2_benchmark/'
     map_name =  'AH_floorplan'
-    map_path = base_path + map_name + '.yaml'
+    map_path = base_path + 'maps/' + map_name + '.yaml'
     navigator.changeMap(map_path)
     time.sleep(2)
 
@@ -192,13 +192,13 @@ def main():
     #         print("One of the planners was invalid")
 
     print("Write Results...")
-    with open(os.getcwd() + '/' + map_name + '_results.pickle', 'wb+') as f:
+    with open(base_path + 'results/nav2_data/' + map_name + '_results.pickle', 'wb+') as f:
         pickle.dump(results, f, pickle.HIGHEST_PROTOCOL)
 
-    with open(os.getcwd() + '/' + map_name + '_costmap.pickle', 'wb+') as f:
+    with open(base_path + 'results/nav2_data/' + map_name + '_costmap.pickle', 'wb+') as f:
         pickle.dump(costmap_msg, f, pickle.HIGHEST_PROTOCOL)
 
-    with open(os.getcwd() + '/' + map_name + '_planners.pickle', 'wb+') as f:
+    with open(base_path + 'results/nav2_data/' + map_name + '_planners.pickle', 'wb+') as f:
         pickle.dump(planners, f, pickle.HIGHEST_PROTOCOL)
     print("Write Complete")
     exit(0)

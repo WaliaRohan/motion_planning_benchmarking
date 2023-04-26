@@ -77,9 +77,10 @@ def plotResults(costmap, paths):
     plt.figure(3)
     ax = sns.heatmap(data, cmap='Greys', cbar=False)
     for i in range(0, len(coords), 2):
-        ax.plot(coords[i], coords[i+1], linewidth=0.7)
+        ax.plot(coords[i], coords[i+1], 'b', linewidth=1.5)
     plt.axis('off')
     ax.set_aspect('equal', 'box')
+    plt.gca().invert_yaxis()
     plt.show()
 
 
@@ -132,14 +133,16 @@ def main():
     
     map_name = sys.argv[1]
 
+    base_path = '/home/speedracer1702/Projects/ros2_ws/src/nav2_benchmark/'
+
     print("Read data")
-    with open(os.getcwd() + '/' + map_name + '_results.pickle', 'rb') as f:
+    with open(base_path + 'results/nav2_data/' + map_name + '_results.pickle', 'rb') as f:
         results = pickle.load(f)
 
-    with open(os.getcwd() + '/' + map_name + '_planners.pickle', 'rb') as f:
+    with open(base_path + 'results/nav2_data/' + map_name + '_planners.pickle', 'rb') as f:
         planners = pickle.load(f)
 
-    with open(os.getcwd() + '/' + map_name + '_costmap.pickle', 'rb') as f:
+    with open(base_path + 'results/nav2_data/' + map_name + '_costmap.pickle', 'rb') as f:
         costmap = pickle.load(f)
 
     paths = getPaths(results)
