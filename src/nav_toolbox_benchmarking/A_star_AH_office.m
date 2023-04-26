@@ -1,19 +1,33 @@
 clear; clc;
 
 rng('default');
-AH_office_size = [132.5 53]; % Estimated from google maps
-map = generateMap('map.png', AH_office_size, 1);
+% AH_office_size = [132.5 53]; % Estimated from google maps
+% map = generateMap('map.png', AH_office_size, 1);
 
-x_factor = map.XWorldLimits(2)/396;
-y_factor = map.YWorldLimits(2)/209;
+map_size = [132.5 53];
+scale = 0.1;
 
-start = [12.759696006774902*x_factor 191.51528930664062*y_factor];
-goal = [295.7162780761719*x_factor 85.76693725585938*y_factor];
-% goal = [148.85 65.65];
+% Read image, convert to grayscale, and normalize
+RGB = imread("map.png");
+grayscale = rgb2gray(RGB);
+resized_grayscale = imresize(grayscale, scale);
+imageNorm = double(resized_grayscale)/255;
+
+% Convert normalized grayscale image to occupancy map
+imageOccupancy = 1 - imageNorm;
+imageOccupancy(imageOccupancy > 0) = 1; % Turn all unkown areas to absolute obstacles
+resolution = mean([size(imageOccupancy, 2)/map_size(1) ...
+    size(imageOccupancy, 1)/map_size(2)]);
+map = occupancyMap(imageOccupancy, resolution);
+map.FreeThreshold = 0.01;
+map.OccupiedThreshold = 0.99;
+
+start = [4.26 49];
+goal = [97.129 20.19];
 
 pb = plannerBenchmark(map, map.world2grid(start), map.world2grid(goal));
 plnFcn = @(planner,s,g)plan(planner,s,g);
-plannerAStarFcn = @(map)plannerAStarGrid(map, 'DiagonalSearch', 'on');
+plannerAStarFcn = @(map)plannerAStarGrid(map);%, 'DiagonalSearch', 'on');
 pb.addPlanner(plnFcn, plannerAStarFcn);
 
 runs = 10;

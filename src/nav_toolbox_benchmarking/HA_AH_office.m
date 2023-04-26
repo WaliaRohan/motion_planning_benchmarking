@@ -9,11 +9,11 @@ scale = 0.1;
 RGB = imread("map.png");
 grayscale = rgb2gray(RGB);
 resized_grayscale = imresize(grayscale, scale);
-dark_grayscale = imadjust(resized_grayscale);
-imageNorm = double(dark_grayscale)/255;
+imageNorm = double(resized_grayscale)/255;
 
 % Convert normalized grayscale image to occupancy map
 imageOccupancy = 1 - imageNorm;
+imageOccupancy(imageOccupancy > 0) = 1; % Turn all unkown areas to absolute obstacles
 resolution = mean([size(imageOccupancy, 2)/map_size(1) ...
     size(imageOccupancy, 1)/map_size(2)]);
 map = occupancyMap(imageOccupancy, resolution);
