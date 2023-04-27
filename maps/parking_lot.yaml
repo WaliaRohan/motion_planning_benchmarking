@@ -1,6 +1,6 @@
-image: parking_lot_small.pgm
+image: parking_lot.pgm
 resolution: 0.333316667 # xLims: [0 50], yLims: [0 33.33], imageSize: [150 x 100], resolution = area_in_meters/area_in_pixels
 origin: [0, 0, 0]
 negate: 0
-occupied_thresh: 0.99
-free_thresh: 0.01
+occupied_thresh: 0.01
+free_thresh: 0.99
