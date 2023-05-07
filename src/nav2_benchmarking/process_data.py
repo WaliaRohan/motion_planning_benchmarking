@@ -133,7 +133,7 @@ def main():
     
     map_name = sys.argv[1]
 
-    base_path = '/home/speedracer1702/Projects/ros2_ws/src/nav2_benchmark/'
+    base_path = '/home/speedracer1702/Projects/nav2_benchmark/'
 
     print("Read data")
     with open(base_path + 'results/nav2_data/' + map_name + '_results.pickle', 'rb') as f:

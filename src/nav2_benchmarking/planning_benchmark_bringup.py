@@ -24,7 +24,7 @@ def generate_launch_description():
     nav2_bringup_dir = get_package_share_directory('nav2_bringup')
     config = os.path.join(os.getcwd(), 'nav2_params.yaml')
     map_file = os.path.join(nav2_bringup_dir, 'maps', 'turtlebot3_world.yaml')
-    lifecycle_nodes = ['map_server', 'planner_server']
+    lifecycle_nodes = ['map_server', 'planner_server', 'smoother_server']
 
     return LaunchDescription([
         Node(
@@ -40,6 +40,13 @@ def generate_launch_description():
             package='nav2_planner',
             executable='planner_server',
             name='planner_server',
+            output='screen',
+            parameters=[config]),
+
+        Node(
+            package='nav2_smoother',
+            executable='smoother_server',
+            name='smoother_server',
             output='screen',
             parameters=[config]),
 

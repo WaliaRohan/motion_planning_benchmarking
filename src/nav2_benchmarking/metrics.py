@@ -26,6 +26,8 @@ import time
 import numpy as np
 import sys
 
+from pyquaternion import Quaternion
+
 from random import seed
 from random import randint
 from random import uniform
@@ -44,6 +46,16 @@ def getPlannerResults(navigator, initial_pose, goal_pose, planners):
             return results
     return results
 
+def getSmootherResults(navigator, path, smoothers):
+    smoothed_results = []
+    for smoother in smoothers:
+        smoothed_result = navigator._smoothPathImpl(path, smoother)
+        if smoothed_result is not None:
+            smoothed_results.append(smoothed_result)
+        else:
+            print(smoother, "failed to smooth the path")
+            return None
+    return smoothed_results
 
 def getRandomStart(costmap, max_cost, side_buffer, time_stamp, res):
     start = PoseStamped()
@@ -96,16 +108,18 @@ def getRandomGoal(costmap, start, max_cost, side_buffer, time_stamp, res):
             break
     return goal
 
-def getPose(x, y, w):
+def getPose(x, y, orientation):
     pose = PoseStamped()
     pose.header.frame_id = 'map'
     pose.pose.position.x = x
     pose.pose.position.y = y
     pose.pose.position.z = 0.01
-    pose.pose.orientation.x = 0.0
-    pose.pose.orientation.y = 0.0
-    pose.pose.orientation.z = 0.0
-    pose.pose.orientation.w = w
+
+    quat = Quaternion(axis=[0, 0, 1], angle=orientation) 
+    pose.pose.orientation.x = quat.x
+    pose.pose.orientation.y = quat.y
+    pose.pose.orientation.z = quat.z
+    pose.pose.orientation.w = quat.w
 
     return pose
 
@@ -114,10 +128,11 @@ def main():
 
     navigator = BasicNavigator()
 
-    # Set map to use, other options: 100by100_15, 100by100_10
-    # map_path = os.getcwd() + '/' + glob.glob('**/100by100_20.yaml', recursive=True)[0]
-    # map_path = '/home/speedracer1702/Projects/navigation2/tools/planner_benchmarking/' + 'turtlebot3_world.yaml'
-    base_path = '/home/speedracer1702/Projects/ros2_ws/src/nav2_benchmark/'
+    # # Wait for planner and smoother to fully activate
+    # print("Waiting for planner and smoother servers to activate")
+    # navigator.waitUntilNav2Active('smoother_server', 'planner_server')
+    
+    base_path = '/home/speedracer1702/Projects/nav2_benchmark/'
     map_name =  'AH_floorplan'
     map_path = base_path + 'maps/' + map_name + '.yaml'
     navigator.changeMap(map_path)
@@ -129,51 +144,56 @@ def main():
     costmap.resize(costmap_msg.metadata.size_y, costmap_msg.metadata.size_x)
 
     # Declare planners to use
-    planners = ['SmacHybrid'] # ['Navfn', 'ThetaStar', 'SmacHybrid', 'Smac2d',  'SmacLattice']
-    
+    planner = ['SmacHybrid'] # ['Navfn', 'ThetaStar', 'SmacHybrid', 'Smac2d',  'SmacLattice']
+    smoothers = ['constrained_smoother'] # 'simple_smoother', 'constrained_smoother', 'sg_smoother'
+
     # Generate init/goal pose based on map
 
     if (map_name == 'office_area'):
          init_x = -1.0
          init_y = 0.0
-         init_w = -math.pi
+         init_o = 0.0
 
          goal_x = 14.0
          goal_y = -2.25
-         goal_w = 0.0
+         goal_o = 0.0
     elif (map_name == 'MATLAB_clutter'):
          init_x = 0.3 # 2.0
          init_y = 0.5 # 3.0
-         init_w = 0.0
+         init_o = 0.0
 
          goal_x = 49.3 # 248.0
          goal_y = 49.7 # 248.0
-         goal_w = 0.0
+         goal_o = 0.0
     elif (map_name == 'parking_lot'):
          init_x = 4.0
          init_y = 9.0
-         init_w = math.pi/2
+         init_o = math.pi/2
 
          goal_x = 30.0
          goal_y = 19.0
-         goal_w = -math.pi/2
+         goal_o = -math.pi/2
     elif (map_name == 'AH_floorplan'):
         init_x = 4.684844017028809
         init_y = 49.24850845336914
-        init_w = math.pi/2
+        init_o = 0.0
 
         goal_x = 97.13494110107422
         goal_y = 20.282445907592773
-        goal_w = -math.pi/2
+        goal_o = -math.pi/2
 
-    init_pose = getPose(init_x, init_y, init_w)
-    goal_pose = getPose(goal_x, goal_y, goal_w)
+    init_pose = getPose(init_x, init_y, init_o)
+    goal_pose = getPose(goal_x, goal_y, goal_o)
 
-    results = []
+    planner_results = []
+    smoother_results = []
     
     for i in range(10):
-        result = getPlannerResults(navigator, init_pose, goal_pose, planners)
-        results.append(result)
+        planner_result = getPlannerResults(navigator, init_pose, goal_pose, planner)
+        planner_results.append(planner_result)
+
+        smoother_result = getSmootherResults(navigator, planner_result[0].path, smoothers)
+        smoother_results.append(smoother_result)
 
     # random_pairs = 10
     # res = costmap_msg.metadata.resolution
@@ -193,13 +213,21 @@ def main():
 
     print("Write Results...")
     with open(base_path + 'results/nav2_data/' + map_name + '_results.pickle', 'wb+') as f:
-        pickle.dump(results, f, pickle.HIGHEST_PROTOCOL)
+        pickle.dump(planner_results, f, pickle.HIGHEST_PROTOCOL)
 
     with open(base_path + 'results/nav2_data/' + map_name + '_costmap.pickle', 'wb+') as f:
         pickle.dump(costmap_msg, f, pickle.HIGHEST_PROTOCOL)
 
     with open(base_path + 'results/nav2_data/' + map_name + '_planners.pickle', 'wb+') as f:
-        pickle.dump(planners, f, pickle.HIGHEST_PROTOCOL)
+        pickle.dump(planner, f, pickle.HIGHEST_PROTOCOL)
+
+    with open(base_path + 'results/nav2_data/' + map_name + '_smoother_results.pickle', 'wb+') as f:
+        pickle.dump(smoother_results, f, pickle.HIGHEST_PROTOCOL)
+
+    smoothers.insert(0, planner)
+    with open(base_path + 'results/nav2_data/' + map_name + '_smoothers.pickle', 'wb') as f:
+        pickle.dump(smoothers, f, pickle.HIGHEST_PROTOCOL)
+
     print("Write Complete")
     exit(0)
 
